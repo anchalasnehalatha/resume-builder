@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resume Builder</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #333;
+      padding-bottom: 5px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+    }
+
+    button {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px 10px 10px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Resume Builder</h2>
+    <form id="resumeForm">
+
+      <label for="carrerobjective">carrerobjective:</label>
+      <input type="text" id="carrerobjective" name="carrerobjective" required>
+
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" required>
+
+      <label for="Education">Education:</label>
+      <textarea type="text" id="Education" name="Education" rows="4" required></textarea>
+
+     <label for="technicalskills">technicalskills:</label>
+      <input type="text" id="technicalskills" name="technicalskills" rows="4" required>
+
+      <label for="projects">projects:</label>
+      <input type="text" id="projects" name="projects" rows="4" required>
+
+      <label for="Hobbies">Hobbies:</label>
+      <input type="text" id="Hobbies" name="Hobbies" rows="4" required>
+
+      <label for="experience">Experience:</label>
+      <input type="text" id="experience" name="experience" rows="4" required>
+
+      <label for="Declaration">Declaration:</label>
+      <input type="text" id="Declaration" name="Declaration" rows="4" required>
+    
+    </form>
+    <br>
+      <button type="button" onclick="generateResume()">Generate Resume</button>
+    <div id="resumeOutput"></div>
+  </div>
+
+  <script>
+    function generateResume() {
+      const carrerobjective = document.getElementById("carrerobjective").value;
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const Education = document.getElementById("Education").value;
+      const technicalskills = document.getElementById("technicalskills").value;
+      const projects = document.getElementById("projects").value;
+      const Hobbies = document.getElementById("Hobbies").value;
+      const experience = document.getElementById("experience").value;
+      const Declaration = document.getElementById("Declaration").value;
+      const resumeOutput = `
+      <h3>careerobjective:</h3>
+        <p>${carrerobjective}</p>
+        <h2>${name}</h2>
+        <p>Email: ${email}</p>
+        <h3>Education:</h3>
+        <p>${Education}</p>
+        <h3>technicalskills:</h3>
+        <p>${technicalskills}</p>
+        <h3>projects:</h3>
+        <p>${projects}</p>
+        <h3>Hobbies:</h3>
+        <p>${Hobbies}</p>
+        <h3>Experience:</h3>
+        <p>${experience}</p>
+        <h3>Declaration:</h3>
+        <p>${Declaration}</p>
+      `;
+
+      document.getElementById("resumeOutput").innerHTML = resumeOutput;
+    }
+  </script>
+</body>
+</html>
